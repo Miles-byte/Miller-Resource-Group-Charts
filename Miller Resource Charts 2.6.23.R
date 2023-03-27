@@ -5,10 +5,10 @@ install_github('datarootsio/artyfarty')
 library("artyfarty")
 
 #Downloading Blue and White Logos
-miller_blue_logo <- image_read("C:/Users/Joseph/Documents/Miller Resource Group/miller_blue.png")
+miller_blue_logo <- image_read("https://github.com/Miles-byte/Miller-Resource-Group-Charts/blob/9434a49b489ad26b2542ed6409107cd1a419021d/miller_blue.png?raw=true")
 miller_blue_logo_rast <- rasterGrob(miller_blue_logo, interpolate=TRUE)
 
-miller_white_logo <- image_read("C:/Users/Joseph/Documents/Miller Resource Group/miller_white.png")
+miller_white_logo <- image_read("https://github.com/Miles-byte/Miller-Resource-Group-Charts/blob/9434a49b489ad26b2542ed6409107cd1a419021d/miller_white.png?raw=true")
 miller_white_logo_rast <- rasterGrob(miller_white_logo, interpolate=TRUE)
 
 #Downloading industrial production numbers and taking a 3/12MMA and annual growth rates in 3/12MMA
@@ -199,7 +199,8 @@ ggsave(dpi = "retina",plot = NEWORDER_GROWTH_Graph, "Neworder Growth.png", type 
 
 
 #Downloading PMI Numbers—NOTE: MUST BE MANUALLY UPDATED IN THE CSV FILE WITH EACH MONTH'S NEW DATA
-PMI <- read.csv("C:/Users/Joseph/Documents/Miller Resource Group/Final 3.20.22/PMI.csv") %>%
+#Make sure to keep dates in the YYYY-MM-DD format in the CSV if using Excel to Edit 
+PMI <- read.csv("https://raw.githubusercontent.com/Miles-byte/Miller-Resource-Group-Charts/main/PMI.csv") %>%
   mutate(Date = as.Date(Date))
 
 PMI_Graph <- ggplot() + #plotting PMI and INDPRO data
