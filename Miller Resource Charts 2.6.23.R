@@ -12,6 +12,7 @@ miller_white_logo <- image_read("https://github.com/Miles-byte/Miller-Resource-G
 miller_white_logo_rast <- rasterGrob(miller_white_logo, interpolate=TRUE)
 
 #Downloading industrial production numbers and taking a 3/12MMA and annual growth rates in 3/12MMA
+fredr_set_key("1a7706ab5c5b5d56ca965973990adbcf")
 INDPRO <- fredr(series_id = "INDPRO", observation_start = as.Date("1999-02-01"))%>%
   mutate(value12MMA = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,rollmean(value, 12))) %>%
   mutate(value3MMA = c(NA,NA,rollmean(value, 3))) %>%
